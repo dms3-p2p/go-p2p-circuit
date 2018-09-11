@@ -7,20 +7,20 @@ import (
 	"sync"
 	"time"
 
-	pb "github.com/libp2p/go-libp2p-circuit/pb"
+	pb "github.com/dms3-p2p/go-p2p-circuit/pb"
 
-	logging "github.com/ipfs/go-log"
-	host "github.com/libp2p/go-libp2p-host"
-	inet "github.com/libp2p/go-libp2p-net"
-	peer "github.com/libp2p/go-libp2p-peer"
-	pstore "github.com/libp2p/go-libp2p-peerstore"
-	tptu "github.com/libp2p/go-libp2p-transport-upgrader"
-	ma "github.com/multiformats/go-multiaddr"
+	logging "github.com/dms3-fs/go-log"
+	host "github.com/dms3-p2p/go-p2p-host"
+	inet "github.com/dms3-p2p/go-p2p-net"
+	peer "github.com/dms3-p2p/go-p2p-peer"
+	pstore "github.com/dms3-p2p/go-p2p-peerstore"
+	tptu "github.com/dms3-p2p/go-p2p-transport-upgrader"
+	ma "github.com/dms3-mft/go-multiaddr"
 )
 
 var log = logging.Logger("relay")
 
-const ProtoID = "/libp2p/circuit/relay/0.1.0"
+const ProtoID = "/p2p/circuit/relay/0.1.0"
 
 const maxMessageSize = 4096
 

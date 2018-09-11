@@ -8,14 +8,14 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/libp2p/go-libp2p-circuit"
-	pb "github.com/libp2p/go-libp2p-circuit/pb"
+	. "github.com/dms3-p2p/go-p2p-circuit"
+	pb "github.com/dms3-p2p/go-p2p-circuit/pb"
 
-	bhost "github.com/libp2p/go-libp2p-blankhost"
-	host "github.com/libp2p/go-libp2p-host"
-	swarm "github.com/libp2p/go-libp2p-swarm"
-	swarmt "github.com/libp2p/go-libp2p-swarm/testing"
-	ma "github.com/multiformats/go-multiaddr"
+	bhost "github.com/dms3-p2p/go-p2p-blankhost"
+	host "github.com/dms3-p2p/go-p2p-host"
+	swarm "github.com/dms3-p2p/go-p2p-swarm"
+	swarmt "github.com/dms3-p2p/go-p2p-swarm/testing"
+	ma "github.com/dms3-mft/go-multiaddr"
 )
 
 /* TODO: add tests
@@ -204,7 +204,7 @@ func TestBasicRelayDial(t *testing.T) {
 		con.Close()
 	}()
 
-	addr, err := ma.NewMultiaddr(fmt.Sprintf("/ipfs/%s/p2p-circuit/ipfs/%s", hosts[1].ID().Pretty(), hosts[2].ID().Pretty()))
+	addr, err := ma.NewMultiaddr(fmt.Sprintf("/dms3fs/%s/p2p-circuit/dms3fs/%s", hosts[1].ID().Pretty(), hosts[2].ID().Pretty()))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -262,7 +262,7 @@ func TestUnspecificRelayDial(t *testing.T) {
 		con.Close()
 	}()
 
-	addr, err := ma.NewMultiaddr(fmt.Sprintf("/p2p-circuit/ipfs/%s", hosts[2].ID().Pretty()))
+	addr, err := ma.NewMultiaddr(fmt.Sprintf("/p2p-circuit/dms3fs/%s", hosts[2].ID().Pretty()))
 	if err != nil {
 		t.Fatal(err)
 	}

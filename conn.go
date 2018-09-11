@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"net"
 
-	inet "github.com/libp2p/go-libp2p-net"
-	pstore "github.com/libp2p/go-libp2p-peerstore"
-	ma "github.com/multiformats/go-multiaddr"
-	manet "github.com/multiformats/go-multiaddr-net"
+	inet "github.com/dms3-p2p/go-p2p-net"
+	pstore "github.com/dms3-p2p/go-p2p-peerstore"
+	ma "github.com/dms3-mft/go-multiaddr"
+	manet "github.com/dms3-mft/go-multiaddr-net"
 )
 
 type Conn struct {
@@ -21,7 +21,7 @@ type NetAddr struct {
 }
 
 func (n *NetAddr) Network() string {
-	return "libp2p-circuit-relay"
+	return "p2p-circuit-relay"
 }
 
 func (n *NetAddr) String() string {
@@ -36,7 +36,7 @@ func (c *Conn) RemoteAddr() net.Addr {
 }
 
 func (c *Conn) RemoteMultiaddr() ma.Multiaddr {
-	a, err := ma.NewMultiaddr(fmt.Sprintf("/ipfs/%s/p2p-circuit/ipfs/%s", c.Conn().RemotePeer().Pretty(), c.remote.ID.Pretty()))
+	a, err := ma.NewMultiaddr(fmt.Sprintf("/dms3fs/%s/p2p-circuit/dms3fs/%s", c.Conn().RemotePeer().Pretty(), c.remote.ID.Pretty()))
 	if err != nil {
 		panic(err)
 	}

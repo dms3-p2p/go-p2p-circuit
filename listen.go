@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"net"
 
-	pb "github.com/libp2p/go-libp2p-circuit/pb"
+	pb "github.com/dms3-p2p/go-p2p-circuit/pb"
 
-	ma "github.com/multiformats/go-multiaddr"
-	manet "github.com/multiformats/go-multiaddr-net"
+	ma "github.com/dms3-mft/go-multiaddr"
+	manet "github.com/dms3-mft/go-multiaddr-net"
 )
 
 var _ manet.Listener = (*RelayListener)(nil)
@@ -50,7 +50,7 @@ func (l *RelayListener) Addr() net.Addr {
 }
 
 func (l *RelayListener) Multiaddr() ma.Multiaddr {
-	a, err := ma.NewMultiaddr(fmt.Sprintf("/p2p-circuit/ipfs/%s", l.self.Pretty()))
+	a, err := ma.NewMultiaddr(fmt.Sprintf("/p2p-circuit/dms3fs/%s", l.self.Pretty()))
 	if err != nil {
 		panic(err)
 	}

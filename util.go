@@ -5,14 +5,14 @@ import (
 	"errors"
 	"io"
 
-	pb "github.com/libp2p/go-libp2p-circuit/pb"
+	pb "github.com/dms3-p2p/go-p2p-circuit/pb"
 
 	ggio "github.com/gogo/protobuf/io"
 	proto "github.com/gogo/protobuf/proto"
-	peer "github.com/libp2p/go-libp2p-peer"
-	pstore "github.com/libp2p/go-libp2p-peerstore"
-	ma "github.com/multiformats/go-multiaddr"
-	mh "github.com/multiformats/go-multihash"
+	peer "github.com/dms3-p2p/go-p2p-peer"
+	pstore "github.com/dms3-p2p/go-p2p-peerstore"
+	ma "github.com/dms3-mft/go-multiaddr"
+	mh "github.com/dms3-mft/go-multihash"
 )
 
 func peerToPeerInfo(p *pb.CircuitRelay_Peer) (pstore.PeerInfo, error) {

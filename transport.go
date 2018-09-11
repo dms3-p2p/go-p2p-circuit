@@ -4,10 +4,10 @@ import (
 	"context"
 	"fmt"
 
-	host "github.com/libp2p/go-libp2p-host"
-	tpt "github.com/libp2p/go-libp2p-transport"
-	tptu "github.com/libp2p/go-libp2p-transport-upgrader"
-	ma "github.com/multiformats/go-multiaddr"
+	host "github.com/dms3-p2p/go-p2p-host"
+	tpt "github.com/dms3-p2p/go-p2p-transport"
+	tptu "github.com/dms3-p2p/go-p2p-transport-upgrader"
+	ma "github.com/dms3-mft/go-multiaddr"
 )
 
 const P_CIRCUIT = 290
